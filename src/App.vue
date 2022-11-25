@@ -1,15 +1,32 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1>app</h1>
+  <p>name：{{name}}</p>
+  <button @click="sayHello">say</button>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+// import {h} from 'vue'
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components: {},
+  setup() {
+    // 数据
+    let name = 'clara'
+
+    // 方法
+    function sayHello() {
+      console.log(`Hi，${name}`)
+    }
+
+    // 返回对象（常用）
+    return {
+      name,
+      sayHello
+    }
+
+    // 返回一个函数（渲染函数）
+    // return () => {return h('h1', 'clara')}
+    // return () => h('h1', 'clara')
   }
 }
 </script>
